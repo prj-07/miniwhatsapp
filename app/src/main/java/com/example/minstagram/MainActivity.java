@@ -3,6 +3,7 @@ package com.example.minstagram;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     EditText name;
      FirebaseAuth mAuth;
 
+     private String naam;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +49,29 @@ public class MainActivity extends AppCompatActivity {
         });
         btnlogin.setOnClickListener(view -> {
             loginUser(/*new Intent(loginActivity.this,"")*/);
+
+        });
+        btnlogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendData();
+            }
         });
         forget.setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this,ForgetPassword.class));
         });
 
     }
+
+    private void sendData() {
+        naam = name.getText().toString();
+
+        Intent i = new Intent(MainActivity.this,welcome.class);
+        i.putExtra("name",naam);
+        startActivity(i);
+
+    }
+
     private void loginUser(){
         String email = textemail.getText().toString();
         String password = textpassword.getText().toString();

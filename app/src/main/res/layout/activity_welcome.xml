@@ -10,19 +10,27 @@
         android:id="@+id/textView"
         android:layout_width="138dp"
         android:layout_height="45dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="108dp"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:text="WELCOME"
         android:textColor="@color/black"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="114dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="124dp"
-        android:layout_height="28dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="206dp"
-        tools:layout_editor_absoluteY="114dp" />
+    <EditText
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="191dp"
+        android:layout_marginTop="108dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
