@@ -51,26 +51,26 @@ public class MainActivity extends AppCompatActivity {
             loginUser(/*new Intent(loginActivity.this,"")*/);
 
         });
-        btnlogin.setOnClickListener(new View.OnClickListener() {
+       /* btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sendData();
             }
-        });
+        });*/
         forget.setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this,ForgetPassword.class));
         });
 
     }
 
-    private void sendData() {
+   /* private void sendData() {
         naam = name.getText().toString();
 
         Intent i = new Intent(MainActivity.this,welcome.class);
         i.putExtra("name",naam);
         startActivity(i);
 
-    }
+    }*/
 
     private void loginUser(){
         String email = textemail.getText().toString();
