@@ -3,10 +3,12 @@ package com.example.minstagram;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +17,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -22,10 +26,14 @@ public class RegisterActivity extends AppCompatActivity {
     TextInputEditText textView5;
     Button regbutton ;
     TextView login;
-
+    EditText name;
+EditText phone;
     FirebaseAuth mAuth;
+    FirebaseDatabase rootnode;
+    DatabaseReference reference;
 
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +42,8 @@ public class RegisterActivity extends AppCompatActivity {
         textView5 = findViewById(R.id.textView5);
         login = findViewById(R.id.login);
         regbutton = findViewById(R.id.regbutton);
-
+        name = findViewById(R.id.tvfirstname);
+        phone = findViewById(R.id.phoneno);
         mAuth = FirebaseAuth.getInstance();
         regbutton.setOnClickListener(view ->
         {
@@ -63,6 +72,15 @@ public class RegisterActivity extends AppCompatActivity {
                     if (task.isSuccessful()){
                         Toast.makeText(RegisterActivity.this, "User Registered Successfully", Toast.LENGTH_SHORT).show();
                         startActivity(new  Intent(RegisterActivity.this,MainActivity.class));
+                        ReadWriteUser writeUser = new ReadWriteUser(name,email,phone);
+
+                        rootnode = FirebaseDatabase.getInstance();
+                        reference = rootnode.getReference("Users");
+
+                        getset helper = new getset(name,email,phone);
+
+                        reference.child(String.valueOf(name)).setValue(helper);
+
                     }else {
                         Toast.makeText(RegisterActivity.this, "Registration Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }

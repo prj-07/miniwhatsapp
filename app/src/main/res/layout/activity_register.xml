@@ -6,25 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
+
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="227dp"
+        android:layout_marginTop="276dp"
         android:hint="ENTER EMAIL"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="440dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="500dp"
         android:text="Already a registered user?"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,8 +35,8 @@
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="259dp"
-        android:layout_marginTop="440dp"
+        android:layout_marginStart="264dp"
+        android:layout_marginTop="488dp"
         android:text="Login Here"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -46,23 +47,24 @@
         android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="301dp"
+        android:layout_marginTop="340dp"
         android:hint="ENTER PASSWORD"
         android:inputType="textPassword"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="211dp"
-        android:layout_height="221dp"
+        android:layout_width="160dp"
+        android:layout_height="105dp"
         android:layout_marginStart="77dp"
-        android:layout_marginTop="492dp"
+        android:layout_marginTop="580dp"
         android:layout_marginEnd="101dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/miniwhatsapp" />
@@ -72,10 +74,36 @@
         android:layout_width="176dp"
         android:layout_height="48dp"
         android:layout_marginStart="106dp"
-        android:layout_marginTop="372dp"
+        android:layout_marginTop="420dp"
         android:layout_marginEnd="129dp"
         android:text="REGISTER"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/nametext"
+
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="152dp"
+        android:ems="10"
+        android:hint="ENTER NAME"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/phoneno"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="224dp"
+        android:hint="ENTER PHONE NUMBER"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
