@@ -2,10 +2,29 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="4dp">
 
-
-
+<TextView
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/textmessage"
+    android:textSize="13dp"
+    android:padding="12dp"
+    android:textColor="@color/black"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:background="@drawable/background_sent_message"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constrainedWidth_percent =".8"
+    />
+<TextView
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/textmessage"
+    android:textSize="10dp"
+    android:id="@+id/textdate"
+    android:textColor="@color/purple_200"
+    app:layout_constraintEnd_toEndOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
